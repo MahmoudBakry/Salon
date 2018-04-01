@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/app.js"],"names":["app","server","Server"],"mappings":";;;;;;AAAA;;;;AACA;;;;;;AACA,IAAMA,MAAM,wBAAZ;;AAEA,IAAMC,SAAS,eAAKC,MAAL,gBAAf;;kBAGeF,G","file":"app.js","sourcesContent":["import express from 'express';\r\nimport http from 'http';\r\nconst app = express();\r\n\r\nconst server = http.Server(http);\r\n\r\n\r\nexport default app; "]}
