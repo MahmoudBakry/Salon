@@ -2,23 +2,20 @@ import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcryptjs";
 import autoIncrement from 'mongoose-auto-increment';
 
-const AppointmentSchema = new Schema({
-    client: {
-        type: Number,
+const BakatSchema = new Schema({
+    name: {
+        type: String,
         required: true,
-        ref : "client"
     },
-    Date: {
-        type: Date,
+    price: {
+        type: Number,
     },
-    status : {
+    description : {
         type : String,
-        enum : ["pendding", "complete"],
-        default : "pendding"
     }
 });
 
-AppointmentSchema.set('toJSON', {
+BakatSchema.set('toJSON', {
     transform: function (doc, ret, options) {
         ret.id = ret._id;
 
@@ -28,9 +25,9 @@ AppointmentSchema.set('toJSON', {
 });
 
 autoIncrement.initialize(mongoose.connection);
-AppointmentSchema.plugin(autoIncrement.plugin, {
-    model: 'appointment',
+BakatSchema.plugin(autoIncrement.plugin, {
+    model: 'bakat',
     startAt: 1,
 });
 
-export default mongoose.model("appointment", AppointmentSchema);
+export default mongoose.model("bakat", BakatSchema);

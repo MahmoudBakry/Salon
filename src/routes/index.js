@@ -4,6 +4,7 @@ import serviceRoutes from './service.route'
 import appointmentRoutes from './appointment.route'
 import clientRoutes from './client.route'
 import employeeRoutes from './employee.routes'
+import bakatRoutes from './bakat.route'
 import passport from "passport";
 
 const requireAuth = passport.authenticate('jwt', { session: false });
@@ -14,5 +15,6 @@ router.use("/services", requireAuth, serviceRoutes)
 router.use('/appointments', requireAuth, appointmentRoutes)
 router.use('/clients', requireAuth, clientRoutes)
 router.use('/employees', requireAuth, employeeRoutes)
+router.use('/bakats', bakatRoutes)
 
 export default router;
