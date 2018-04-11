@@ -9,5 +9,6 @@ router.route('')
         AppointmentController.createAppointment)
 
     .get(AppointmentController.allAppointment)
+    
 
 export default router;

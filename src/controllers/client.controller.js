@@ -19,13 +19,22 @@ export default {
             next(err)
         }
     },
-    async allClient(req, res, next){
+    async allClient(req, res, next) {
         try {
             let allDocs = await Client.find()
             return res.status(200).json(allDocs)
         } catch (err) {
             next(err)
         }
-    }
+    },
+    async clientDetails(req, res, next) {
+        try {
+            const clientId = req.params.clientId;
+            let docDetails = await Client.findById(clientId);
+            return res.status(200).json(docDetails)
+        } catch (err) {
+            next(err)
+        }
+    },
 
 }

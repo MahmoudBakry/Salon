@@ -13,4 +13,6 @@ router.route('')
         clientController.validateBody(),
         clientController.createClient)
     .get(clientController.allClient)
+router.route('/:clientId')
+    .get(clientController.clientDetails)
 export default router;

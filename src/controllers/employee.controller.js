@@ -32,6 +32,15 @@ export default {
         } catch (err) {
             next(err)
         }
-    }
+    },
+    async employeeDetails(req, res, next) {
+        try {
+            const empId = req.params.empId;
+            let docDetails = await Employee.findById(empId);
+            return res.status(200).json(docDetails);
+        } catch (err) {
+            next(err)
+        }
+    },
 
 }

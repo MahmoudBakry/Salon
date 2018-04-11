@@ -1,5 +1,5 @@
 import express from "express";
-import employeeRoutes from "../controllers/employee.controller";
+import employeeControllers from "../controllers/employee.controller";
 import passport from "passport";
 import passportService from '../services/passport';
 import { multerSaveTo } from "../services/multer";
@@ -11,9 +11,11 @@ const router = express.Router();
 router.route('')
     .post(
         multerSaveTo('emp').single('img'),
-        employeeRoutes.validateBody(),
-        employeeRoutes.createEmp)
+        employeeControllers.validateBody(),
+        employeeControllers.createEmp)
 
-    .get(employeeRoutes.allEmployees)
+    .get(employeeControllers.allEmployees)
+router.route('/:empId')
+    .get(employeeControllers.employeeDetails)
 
 export default router;
