@@ -29,6 +29,10 @@ const PaymentSchema = new Schema({
     finalTotalPrice: {
         type: Number,
     },
+    creationDate : {
+        type: Date,
+        default : new Date()
+    }
 });
 
 PaymentSchema.set('toJSON', {

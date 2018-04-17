@@ -46,6 +46,15 @@ export default {
     },
     //retrive all services 
     async allPayment(req, res, next) {
-
+        try {
+            let allDocs = await Payment.find()
+                .populate('appointment')
+                .populate('client')
+                .populate('employee')
+                .populate('services')
+            return res.status(200).json(allDocs)
+        } catch (err) {
+            next(err)
+        }
     }
 }

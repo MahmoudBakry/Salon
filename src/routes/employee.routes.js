@@ -18,4 +18,6 @@ router.route('')
 router.route('/:empId')
     .get(employeeControllers.employeeDetails)
 
+router.route('/:empId/porfit')
+    .get(employeeControllers.allPaymentUnderOneEmplyee)
 export default router;

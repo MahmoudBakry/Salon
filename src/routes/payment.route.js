@@ -12,4 +12,5 @@ router.route('')
     .post(
         paymentController.validateBody(),
         paymentController.createPayment)
+    .get(paymentController.allPayment)
 export default router;
