@@ -20,7 +20,7 @@ export default {
         const validationErrors = validationResult(req).array();
         if (validationErrors.length > 0)
             return next(new ApiError(422, validationErrors));
-
+        
     },
     //retrive all services 
     async allPayment(req, res, next) {
