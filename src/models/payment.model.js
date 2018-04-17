@@ -20,7 +20,7 @@ const PaymentSchema = new Schema({
         type: Number,
         ref: 'service'
     }],
-    discound: {
+    discount: {
         type: Number
     },
     actualTotalPrice: {
