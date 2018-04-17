@@ -1,5 +1,6 @@
 import express from 'express';
-import http from 'http';
+//import http from 'http';
+import https from 'https'
 import path from "path";
 import bodyparser from "body-parser";
 import cors from "cors";
@@ -21,7 +22,8 @@ mongoose.connection.on('error', err => console.log('\x1b[31m%s\x1b[0m', '[DB] Er
 mongoose.connection.on('disconnected', () => console.log('\x1b[31m%s\x1b[0m', '[DB] DisConnected...'));
 
 const app = express();
-const server = http.Server(app);
+//const server = http.Server(app);
+const server = https.Server(app)
 app.use(expressValidator());
 
 app.use(bodyparser.json({ limit: '50mb' }));
