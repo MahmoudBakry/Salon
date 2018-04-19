@@ -33,8 +33,8 @@ var options = {
 
 const app = express();
 //const server = http.Server(app);
+const serverHtps = https.createServer(options, app);
 const server = http.Server(app)
-const serverHtps = https.createServer( options, app );
 app.use(expressValidator());
 
 app.use(bodyparser.json({ limit: '50mb' }));
@@ -97,4 +97,8 @@ app.use((err, req, res, next) => {
 
 
 
-export default app; 
+export {
+    serverHtps,
+    server
+
+} 
