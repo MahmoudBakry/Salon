@@ -58,7 +58,7 @@ app.get('/swagger.json', function (req, res) {
 
 app.use('/docs', express.static(path.join(__dirname, 'docs')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
+app.use(express.static(path.join(__dirname, 'admin')));
 
 // Ensure Content Type
 app.use('/', (req, res, next) => {
@@ -73,6 +73,9 @@ app.use('/', (req, res, next) => {
 //Routes
 app.use('/api/v1', router);
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin/index.html'));
+ });
 //Not Found Handler
 app.use((req, res, next) => {
     const error = new Error("Not Found..!");
