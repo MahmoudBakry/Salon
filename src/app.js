@@ -1,6 +1,7 @@
 import express from 'express';
-//import http from 'http';
+import http from 'http';
 import https from 'https'
+import fs from 'fs';
 import path from "path";
 import bodyparser from "body-parser";
 import cors from "cors";
@@ -21,9 +22,19 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', err => console.log('\x1b[31m%s\x1b[0m', '[DB] Error : ' + err));
 mongoose.connection.on('disconnected', () => console.log('\x1b[31m%s\x1b[0m', '[DB] DisConnected...'));
 
+//certificate key
+var options = {
+    key: fs.readFileSync('./localhost.key'),
+    cert: fs.readFileSync('./localhost.cert'),
+    requestCert: false,
+    rejectUnauthorized: false
+};
+
+
 const app = express();
 //const server = http.Server(app);
-const server = https.Server(app)
+const server = http.Server(app)
+const serverHtps = https.createServer( options, app );
 app.use(expressValidator());
 
 app.use(bodyparser.json({ limit: '50mb' }));
@@ -83,4 +94,7 @@ app.use((err, req, res, next) => {
     });
     console.log(err);
 });
+
+
+
 export default app; 
