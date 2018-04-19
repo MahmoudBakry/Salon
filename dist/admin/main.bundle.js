@@ -1233,7 +1233,7 @@ webpackJsonp(["main"], {
     /***/"./src/app/core/login/login.component.css":
     /***/function srcAppCoreLoginLoginComponentCss(module, exports) {
 
-        module.exports = ".logginn{\r\n    background-color: #d4a15b;\r\n    margin:auto;\r\n    max-width: 400px;\r\n    min-height:400px;\r\n    margin-top: 7.5%;\r\n    -webkit-box-shadow: 0px 1px 20px 10px #ccc;\r\n            box-shadow: 0px 1px 20px 10px #ccc;\r\n    border-radius: 25px;\r\n\r\n}\r\n.logginn h2{\r\n    font-size: 25px !important;\r\n}\r\n.medo{\r\nfont-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;\r\nfont-weight: bold;\r\npadding-top: 20px;\r\npadding-bottom: 20px;\r\nfont-size: 40px;\r\ndisplay: block;\r\ncolor: #6f0202;\r\ntext-shadow:1px 2px 20px #fff;\r\n};\r\n.logginn lable{  \r\n  float: right; \r\n  margin: 0 5px !important;\r\n }\r\n.form-data input{\r\n    width: 390px;\r\n    margin: 0 5px;\r\n    border-radius: 11px;\r\n    -webkit-box-shadow: inset 1px 0px 7px 2px #ccc;\r\n            box-shadow: inset 1px 0px 7px 2px #ccc;\r\n}";
+        module.exports = ".logginn{\r\n    margin:auto;\r\n    max-width: 400px;\r\n    min-height:400px;\r\n    margin-top: 7.5%;\r\n    -webkit-box-shadow: 0px 1px 20px 10px #ccc;\r\n            box-shadow: 0px 1px 20px 10px #ccc;\r\n    border-radius: 25px;\r\n\r\n}\r\n.logginn h2{\r\n    font-size: 25px !important;\r\n}\r\n.medo{\r\nfont-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;\r\nfont-weight: bold;\r\npadding-top: 20px;\r\npadding-bottom: 20px;\r\nfont-size: 40px;\r\ndisplay: block;\r\ncolor: #428bca;\r\ntext-shadow:1px 2px 20px #fff;\r\n};\r\n.logginn lable{  \r\n  float: right; \r\n  margin: 0 5px !important;\r\n }\r\n.form-data {\r\n     padding: 0 20px;\r\n }\r\n.form-data label {\r\n     margin-bottom: 5px;\r\n }\r\n.form-data input{\r\n    /* width: 390px; */\r\n    /* margin: 0 5px; */\r\n    border-radius: 11px;\r\n}";
 
         /***/
     },
@@ -1241,7 +1241,7 @@ webpackJsonp(["main"], {
     /***/"./src/app/core/login/login.component.html":
     /***/function srcAppCoreLoginLoginComponentHtml(module, exports) {
 
-        module.exports = "<app-logInSignUp-header></app-logInSignUp-header>\r\n<div class=\"container\" style=\" direction: ltr;background-color: #fbfbfb;padding-bottom: 104px;\">\r\n    <div class=\"row log-in-body\">\r\n\r\n        <div class=\"text-center logginn\">\r\n            <span  class=\"medo\">\r\n                LE-SALON\r\n            </span>\r\n            <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\" class=\"main-form form-data\">\r\n                <div class=\"form\">\r\n                    <h2>تسجــيل الـدخـول</h2>\r\n                    <hr>\r\n                    <div class=\"form-group\">\r\n                        <label class=\"control-label lab\" style=\"margin: 0 5px\" for=\"userphone\">*رقم الهاتف</label>\r\n                        <input type=\"text\" formControlName=\"phone\" id=\"userphone\" class=\"form-control\">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label class=\"control-label lab\" style=\"margin: 0 5px\" for=\"userPassword\">*كلمة المرور</label>\r\n                        <input type=\"password\" formControlName=\"password\" id=\"userPassword\" class=\"form-control\">\r\n                    </div>\r\n                    <button class=\"btn btn-primary submit\">دخــول</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
+        module.exports = "<app-logInSignUp-header></app-logInSignUp-header>\r\n<div class=\"container\" style=\" direction: ltr;padding-bottom: 104px;\">\r\n    <div class=\"row log-in-body\">\r\n\r\n        <div class=\"text-center logginn\">\r\n            <span  class=\"medo\">\r\n                LE-SALON\r\n            </span>\r\n            <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\" class=\"main-form form-data\">\r\n                <div class=\"form\">\r\n                    <h2>تسجــيل الـدخـول</h2>\r\n                    <hr>\r\n                    <div class=\"form-group\">\r\n                        <label class=\"control-label lab\"  for=\"userphone\">*رقم الهاتف</label>\r\n                        <input type=\"text\" formControlName=\"phone\" id=\"userphone\" class=\"form-control\">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label class=\"control-label lab\"  for=\"userPassword\">*كلمة المرور</label>\r\n                        <input type=\"password\" formControlName=\"password\" id=\"userPassword\" class=\"form-control\">\r\n                    </div>\r\n                    <button class=\"btn btn-primary submit\">دخــول</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>";
 
         /***/
     },
@@ -1700,8 +1700,8 @@ webpackJsonp(["main"], {
         // The list of which env maps to which file can be found in `.angular-cli.json`.
         var environment = {
             production: true,
-            apiOrigin: 'http://212.83.136.16',
-            apiPath: 'http://212.83.136.16/api/v1/'
+            apiOrigin: 'http://212.83.136.16:3333',
+            apiPath: 'http://212.83.136.16:3333/api/v1/'
         };
 
         /***/
